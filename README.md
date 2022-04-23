@@ -16,7 +16,7 @@ ng add @angular/localize
 npm install @popperjs/core
 
 npm install @ng-bootstrap/ng-bootstrap
---------------------------------------->
+------------------------->
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
 
