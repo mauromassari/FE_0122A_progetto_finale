@@ -1,4 +1,6 @@
 # FE_0122A_progetto_finale
+(This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.)
+
 Progetto finale del corso Front-End di Epicode: CRM per la gestione di fatture e clienti
 
 
@@ -17,8 +19,3 @@ ng add @angular/localize
 npm install @popperjs/core
 
 npm install @ng-bootstrap/ng-bootstrap
-
-
-
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
