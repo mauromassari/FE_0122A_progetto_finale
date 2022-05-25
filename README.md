@@ -28,7 +28,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ___________________________________________________
 
-Cosa ho installato/lanciato nel terminale:
+Cosa ho installato nel terminale:
+
+npm install bootstrap
 
 ng add @angular/material
 
