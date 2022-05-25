@@ -1,0 +1,61 @@
+<h1 class="display-2">Invoice Dema Studio</h1>
+
+  <div class="m-5">
+    <form #form="ngForm" (ngSubmit)="login(form)">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Login</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div fxLayout>
+            <div>
+              <mat-form-field class="full-width">
+                <input
+                  matInput
+                  placeholder="Username"
+                  type="text"
+                  #username="ngModel"
+                  ngModel
+                  name="username"
+                  required
+                />
+                <mat-error *ngIf="username.invalid">
+                  Email <strong>Obbligatoria</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div fxLayout>
+            <div>
+              <mat-form-field class="full-width">
+                <input
+                  matInput
+                  type="password"
+                  #password="ngModel"
+                  placeholder="Password"
+                  ngModel
+                  name="password"
+                  required
+                />
+                <mat-error *ngIf="password.invalid">
+                  Password <strong>Obbligatoria</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button class="btn-grad" mat-raised-button color="primary" type="submit" >Accedi</button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+    <div fxLayout>
+      <span style="color:aliceblue"> oppure &nbsp;</span>  <a [routerLink]="['/register']">Registrati</a>
+    </div>
+  </div>
+
+  <div class="mt-5"><p class="text-white text-center mt-lg-5">Il tuo commercialista può accedere gratis a Invoice Dema Studio e scaricare le tue fatture.<br> Così lui le potrà registrare subito e tu non avrai più brutte sorprese a fine anno. <br> Non hai un commercialista? Ti suggeriamo i migliori nella tua zona!</p></div>
+
+
+
+

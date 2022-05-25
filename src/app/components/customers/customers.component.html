@@ -1,0 +1,104 @@
+<!--<div class="m-5 pt-5 pb-5">
+  <h1 class="text-white">Lista Clienti</h1>
+  <table class="table text-white" *ngIf="clienti; else caricamneto">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>id</td>
+        <td>Partita Iva</td>
+        <td>Pec</td>
+        <td>Telefono</td>
+        <td>Nome e Cognome</td>
+        <td>Telefono Titolare</td>
+        <td>Ragione Sociale</td>
+        <td class="text-center">Gestione cliente</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cliente of clienti; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{cliente.id}}</td>
+        <td>{{cliente.partitaIva}}</td>
+        <td>{{cliente.pec}}</td>
+        <td>{{cliente.telefono}}</td>
+        <td>{{cliente.nomeContatto}} {{cliente.cognomeContatto}}</td>
+        <td>{{cliente.telefonoContatto}}</td>
+        <td>{{cliente.ragioneSociale}}</td>
+        <td class="text-center"> <button class="me-3">Modifica</button> <button (click)="cancellaCliente(cliente.id)">Cancella</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #caricamneto><h3 class="text-center text-white">Sto caricando tutti i clienti registrati...</h3></ng-template>
+</div>
+
+-->
+
+<div class="m-5 pt-5 pb-5">
+  <h1 class="text-white">Lista Clienti</h1>
+
+  <div class="whi p-5">
+   <div class="tableShadow">
+      <table mat-table [dataSource]="dataSource.content">
+
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> id </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <!--<ng-container matColumnDef="partitaIva">
+          <th mat-header-cell *matHeaderCellDef> Partita Iva</th>
+          <td mat-cell *matCellDef="let element"> {{element.partitaIva}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="pec">
+          <th mat-header-cell *matHeaderCellDef> Pec </th>
+          <td mat-cell *matCellDef="let element"> {{element.pec}} </td>
+        </ng-container>-->
+
+        <ng-container matColumnDef="telefono">
+          <th mat-header-cell *matHeaderCellDef> Telefono </th>
+          <td mat-cell *matCellDef="let element"> {{element.telefono}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="nomeEcognome">
+          <th mat-header-cell *matHeaderCellDef> Nome e Cognome</th>
+          <td mat-cell *matCellDef="let element"> {{element.nomeContatto}} {{element.cognomeContatto}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="telefonoContatto">
+          <th mat-header-cell *matHeaderCellDef> Telefono Contatto </th>
+          <td mat-cell *matCellDef="let element"> {{element.telefonoContatto}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="ragioneSociale">
+          <th mat-header-cell *matHeaderCellDef> Ragione Sociale </th>
+          <td mat-cell *matCellDef="let element"> {{element.ragioneSociale}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="gestioneCliente">
+          <th mat-header-cell *matHeaderCellDef> Gestione Cliente </th>
+          <td mat-cell *matCellDef="let element">
+            <button style="background-color:#d15bcd; color:aliceblue; border:#d15bcd" class="me-3 btn-sm" [routerLink]="['/nuova-fattura', element.id ]">Nuova Fattura</button>
+            <button style="background-color:#8e3fb5; color:aliceblue; border:#8e3fb5" [routerLink]="['/invoices/cliente', element.id]" routerLinkActive="router-link-active" class="me-3 btn-sm">Fatture</button>
+            <button style="background-color:#3F51B5; color:aliceblue; border:#3F51B5"
+              [routerLink]="['/form-cliente', element.id]" routerLinkActive="router-link-active" class="me-3 hover btn-sm">Modifica</button>
+            <button style="background-color:#b53f3f; color:aliceblue; border:#b53f3f" class="btn-sm" (click)="cancellaCliente(element.id)">Cancella</button> </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+
+
+    <mat-paginator
+    [length]="dataSource.totalElements"
+    [pageSize]="dataSource.pageable.pageSize"
+    [pageSizeOptions]="[5,10,15,20]"
+    (page)="pageEvent = $event; onPaginateChange($event)"
+    showFirstLastButtons>
+    </mat-paginator>
+   </div>
+  </div>
+</div>

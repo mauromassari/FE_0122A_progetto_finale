@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
+
+/*
+.mat-typography.mat-app-background{
+  background: #00d2ff;
+  background: linear-gradient(90deg, rgb(0, 208, 255, 1) 0%, #3a7bd5 85%);
+}*/
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;0,700;1,300;1,500&display=swap');
+
+*{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+ }
+
+
+.mat-typography.mat-app-background{
+  //background: #3F51B5;
+  background-image: url("./assets/img/sfondo.png");
+  //background-repeat: no-repeat;
+  background-size: cover;
+  //overflow-x: hidden;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+
+.pagination li{
+  cursor: pointer;
+}
+
+.active-pagination {
+  background-color: lightgray;
+}
+
+.cursor-disabled {
+  cursor: no-drop;
+  pointer-events: visible;
+}
+
+.dropdown{
+  cursor: pointer;
+}
+
+.whi{
+  background-color: aliceblue;
+  padding: 5px;
+  margin-bottom: 1em;
+}
+
+.tableShadow{
+  box-shadow: 10px 10px 13px -9px rgba(0,0,0,0.75);
+-webkit-box-shadow: 10px 10px 13px -9px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 13px -9px rgba(0,0,0,0.75);
+}
+
+
+

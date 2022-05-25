@@ -1,0 +1,388 @@
+<!--<div class="m-5 pt-3 p-5">
+  <div class="container text-white">
+    <h2 class=>Nuovo Cliente</h2>
+    <div class="row">
+
+      <div>
+        <form #myForm="ngForm" (ngSubmit)="registra(myForm)">
+
+          <div  class="row mb-2">
+            <div class="form-group col-6">
+              <label for="ragioneSociale">Ragione Sociale</label>
+              <input id="ragioneSociale" required name="ragioneSociale" ngModel class="form-control" type="text" #ragioneSociale="ngModel">
+              <div *ngIf="ragioneSociale.invalid && ragioneSociale.touched" class="alert alert-danger mt-1" role="alert">
+                Campo obbligatorio
+              </div>
+            </div>
+
+            <div class="form-group col-6">
+              <label for="partitaIva">Partita Iva</label>
+              <input id="partitaIva" required name="partitaIva" ngModel class="form-control" type="text" #partitaIva="ngModel">
+              <div *ngIf="partitaIva.invalid && partitaIva.touched" class="alert alert-danger mt-1" role="alert">
+                Campo obbligatorio
+              </div>
+            </div>
+          </div>
+
+          <div  class="row mb-2">
+            <div class="form-group col-6">
+              <label for="email">Email</label>
+              <input id="email" required name="email" ngModel class="form-control" type="email" #email="ngModel">
+              <div *ngIf="email.invalid && email.touched" class="alert alert-danger mt-1" role="alert">
+                Campo obbligatorio
+              </div>
+            </div>
+
+            <div class="form-group col-6">
+              <label for="tipoCliente">Tipo Cliente</label>
+              <input id="tipoCliente" required name="tipoCliente" ngModel class="form-control" type="text" #tipoCliente="ngModel">
+              <div *ngIf="tipoCliente.invalid && tipoCliente.touched" class="alert alert-danger mt-1" role="alert">
+                Campo obbligatorio
+              </div>
+            </div>
+          </div>
+
+          <div  class="row mb-2">
+            <div class="form-group col-6">
+              <label for="telefono">Telefono</label>
+              <input id="telefono" required name="telefono" ngModel class="form-control" type="text" #telefono="ngModel">
+              <div *ngIf="telefono.invalid && telefono.touched" class="alert alert-danger mt-1" role="alert">
+                Campo obbligatorio
+              </div>
+            </div>
+
+            <div class="form-group col-6">
+              <label for="pec">Pec</label>
+              <input id="pec" required name="pec" ngModel class="form-control" type="email"
+                #pec="ngModel">
+            </div>
+            <div *ngIf="pec.invalid && pec.touched" class="alert alert-danger mt-1" role="alert">
+              Campo obbligatorio
+            </div>
+          </div>
+
+          <div  class="row mb-2">
+            <div class="form-group col-6">
+              <label for="nomeContatto">Nome Contatto</label>
+              <input id="nomeContatto" required name="nomeContatto" ngModel class="form-control" type="text" #nomeContatto="ngModel">
+              <div *ngIf="nomeContatto.invalid && nomeContatto.touched" class="alert alert-danger mt-1" role="alert">
+                Campo obbligatorio
+              </div>
+            </div>
+
+            <div class="form-group col-6">
+              <label for="cognomeContatto">Cognome Contatto</label>
+              <input id="cognomeContatto" required name="cognomeContatto" ngModel class="form-control" type="text" #cognomeContatto="ngModel">
+              <div *ngIf="cognomeContatto.invalid && cognomeContatto.touched" class="alert alert-danger mt-1" role="alert">
+                Campo obbligatorio
+              </div>
+            </div>
+          </div>
+
+          <div  class="row mb-2">
+            <div class="form-group col-6">
+              <label for="telefonoContatto">Telefono Contatto</label>
+              <input id="telefonoContatto" required name="telefonoContatto" ngModel class="form-control" type="text" #telefonoContatto="ngModel">
+              <div *ngIf="telefonoContatto.invalid && telefonoContatto.touched" class="alert alert-danger mt-1" role="alert">
+                Campo obbligatorio
+              </div>
+            </div>
+
+            <div class="form-group col-6">
+              <label for="emailContatto">Email Contatto</label>
+              <input id="emailContatto" required name="emailContatto" ngModel class="form-control" type="text" #emailContatto="ngModel">
+              <div *ngIf="emailContatto.invalid && emailContatto.touched" class="alert alert-danger mt-1" role="alert">
+                Campo obbligatorio
+              </div>
+            </div>
+          </div>
+
+          <div><hr></div>
+
+          <h3 class="mb-2">Indirizzo Sede Operativa</h3>
+
+          <div  class="row mb-2">
+            <div class="form-group col-3">
+              <label for="viaSO">Via</label>
+              <input id="viaSO" required name="viaSO" ngModel class="form-control" type="text" #viaSO="ngModel">
+              <div *ngIf="viaSO.invalid && viaSO.touched" class="alert alert-danger mt-1" role="alert">
+                Campo obbligatorio
+              </div>
+            </div>
+
+            <div class="form-group col-3">
+              <label for="civicoSO">Civico</label>
+              <input id="civicoSO" required name="civicoSO" ngModel class="form-control" type="text" #civicoSO="ngModel">
+              <div *ngIf="civicoSO.invalid && civicoSO.touched" class="alert alert-danger mt-1" role="alert">
+                Campo obbligatorio
+              </div>
+            </div>
+
+            <div class="form-group col-3">
+              <label for="capSO">Cap</label>
+              <input id="capSO" required name="capSO" ngModel class="form-control" type="text" #capSO="ngModel">
+              <div *ngIf="capSO.invalid && capSO.touched" class="alert alert-danger mt-1" role="alert">
+                Campo obbligatorio
+              </div>
+            </div>
+
+            <div class="form-group col-3">
+              <label for="localitaSO">Località</label>
+              <input id="localitaSO" required name="localitaSO" ngModel class="form-control" type="text" #localitaSO="ngModel">
+              <div *ngIf="localitaSO.invalid && localitaSO.touched" class="alert alert-danger mt-1" role="alert">
+                Campo obbligatorio
+              </div>
+            </div>
+          </div>
+
+          <div  class="row mb-2">
+            <div class="form-group col-4">
+              <label for="nomeComuneSO">Comune</label>
+              <input id="nomeComuneSO" required name="nomeComuneSO" ngModel class="form-control" type="text" #nomeComuneSO="ngModel">
+              <div *ngIf="nomeComuneSO.invalid && nomeComuneSO.touched" class="alert alert-danger mt-1" role="alert">
+                Campo obbligatorio
+              </div>
+            </div>
+
+            <div class="form-group col-4">
+              <label for="nomeProvinciaSO">Provincia</label>
+              <input id="nomeProvinciaSO" required name="nomeProvinciaSO" ngModel class="form-control" type="text" #nomeProvinciaSO="ngModel">
+              <div *ngIf="nomeProvinciaSO.invalid && nomeProvinciaSO.touched" class="alert alert-danger mt-1" role="alert">
+                Campo obbligatorio
+              </div>
+            </div>
+
+            <div class="form-group col-4">
+              <label for="siglaSO">Sigla Provincia</label>
+              <input id="siglaSO" required name="siglaSO" ngModel class="form-control" type="text" #siglaSO="ngModel">
+              <div *ngIf="siglaSO.invalid && siglaSO.touched" class="alert alert-danger mt-1" role="alert">
+                Campo obbligatorio
+              </div>
+            </div>
+          </div>
+
+          <div><hr></div>
+
+          <h3 class="mb-2">Indirizzo Sede Legale</h3>
+
+          <div  class="row mb-2">
+            <div class="form-group col-3">
+              <label for="viaSL">Via</label>
+              <input id="viaSL" required name="viaSL" ngModel class="form-control" type="text" #viaSL="ngModel">
+              <div *ngIf="viaSL.invalid && viaSL.touched" class="alert alert-danger mt-1" role="alert">
+                Campo obbligatorio
+              </div>
+            </div>
+
+            <div class="form-group col-3">
+              <label for="civicoSL">Civico</label>
+              <input id="civicoSL" required name="civico" ngModel class="form-control" type="text" #civicoSL="ngModel">
+              <div *ngIf="civicoSL.invalid && civicoSL.touched" class="alert alert-danger mt-1" role="alert">
+                Campo obbligatorio
+              </div>
+            </div>
+
+            <div class="form-group col-3">
+              <label for="capSL">Cap</label>
+              <input id="capSL" required name="capSL" ngModel class="form-control" type="text" #capSL="ngModel">
+              <div *ngIf="capSL.invalid && capSL.touched" class="alert alert-danger mt-1" role="alert">
+                Campo obbligatorio
+              </div>
+            </div>
+
+            <div class="form-group col-3">
+              <label for="localitaSL">Località</label>
+              <input id="localitaSL" required name="localita" ngModel class="form-control" type="text" #localitaSL="ngModel">
+              <div *ngIf="localitaSL.invalid && localitaSL.touched" class="alert alert-danger mt-1" role="alert">
+                Campo obbligatorio
+              </div>
+            </div>
+          </div>
+
+          <div  class="row mb-2">
+            <div class="form-group col-4">
+              <label for="nomeComuneSL">Comune</label>
+              <input id="nomeComuneSL" required name="nomeComuneSL" ngModel class="form-control" type="text" #nomeComuneSL="ngModel">
+              <div *ngIf="nomeComuneSL.invalid && nomeComuneSL.touched" class="alert alert-danger mt-1" role="alert">
+                Campo obbligatorio
+              </div>
+            </div>
+
+            <div class="form-group col-4">
+              <label for="nomeProvinciaSL">Provincia</label>
+              <input id="nomeProvinciaSL" required name="nomeProvinciaSL" ngModel class="form-control" type="text" #nomeProvinciaSL="ngModel">
+              <div *ngIf="nomeProvinciaSL.invalid && nomeProvinciaSL.touched" class="alert alert-danger mt-1" role="alert">
+                Campo obbligatorio
+              </div>
+            </div>
+
+            <div class="form-group col-4">
+              <label for="siglaSL">Sigla Provincia</label>
+              <input id="siglaSL" required name="siglaSL" ngModel class="form-control" type="text" #siglaSL="ngModel">
+              <div *ngIf="siglaSL.invalid && siglaSL.touched" class="alert alert-danger mt-1" role="alert">
+                Campo obbligatorio
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-3 gap-2">
+              <button type="submit" [disabled]="myForm.invalid" class="btn btn-outline-light mt-4 btn-lg">Registra</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+</div>-->
+
+<div class="m-5 pt-3 p-5"  style="color:aliceblue">
+  <div class="container">
+    <h2 class=>Form Cliente</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <form [formGroup]="form" (submit)="cSalva(form)">
+
+                <div class="row">
+                  <div class="mb-3 col-6">
+                      <label class="form-label">Ragione Sociale*</label>
+                      <input class="form-control" formControlName="ragioneSociale" type="text" id="ragioneSociale"
+                          autocomplete="false">
+                  </div>
+                  <div class="mb-3 col-6">
+                      <label class="form-label">Partita Iva*</label>
+                      <input class="form-control" formControlName="partitaIva" type="text" id="partitaIva"
+                          autocomplete="false">
+                  </div>
+                </div>
+
+
+                <div class="row">
+                  <div class="mb-3 col-6">
+                      <label class="form-label">Email*</label>
+                      <input class="form-control" formControlName="email" type="email" id="email" autocomplete="false">
+                  </div>
+
+                  <div class="mb-3 col-6">
+                      <label class="form-label">Tipo Cliente*</label>
+                      <select class="form-control" formControlName="tipoCliente" id="tipoCliente" *ngIf="tipiclienti">
+                          <option value=""></option>
+                          <option *ngFor="let tc of tipiclienti" value="{{ tc }}">{{ tc }}</option>
+                      </select>
+                  </div>
+                </div>
+
+
+                <div class="row">
+                  <div class="mb-3 col-6">
+                      <label class="form-label">Pec</label>
+                      <input class="form-control" formControlName="pec" type="email" id="pec" autocomplete="false">
+                  </div>
+                  <div class="mb-3 col-6">
+                      <label class="form-label">Telefono</label>
+                      <input class="form-control" formControlName="telefono" type="tel" id="telefono"
+                          autocomplete="false">
+                  </div>
+                </div>
+
+                <div> <hr> </div>
+
+                <div class="row">
+                  <div class="mb-3 col-6">
+                      <label class="form-label">Nome Contatto</label>
+                      <input class="form-control" formControlName="nomeContatto" type="text" id="nomeContatto"
+                          autocomplete="false">
+                  </div>
+                  <div class="mb-3 col-6">
+                      <label class="form-label">Cognome Contatto</label>
+                      <input class="form-control" formControlName="cognomeContatto" type="text" id="cognomeContatto"
+                          autocomplete="false">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="mb-3 col-6">
+                      <label class="form-label">Telefono Contatto</label>
+                      <input class="form-control" formControlName="telefonoContatto" type="tel" id="telefonoContatto"
+                          autocomplete="false">
+                  </div>
+                  <div class="mb-3 col-6">
+                      <label class="form-label">Email Contatto*</label>
+                      <input class="form-control" formControlName="emailContatto" type="email" id="emailContatto"
+                          autocomplete="false">
+                  </div>
+                </div>
+
+                <div> <hr> </div>
+
+                <div formGroupName="indirizzoSedeOperativa">
+
+                    <div class="row">
+                      <div class="mb-3 col-6">
+                          <label class="form-label">Via</label>
+                          <input class="form-control" formControlName="via" type="text" id="via" autocomplete="false">
+                      </div>
+
+                      <div class="mb-3 col-6">
+                          <label class="form-label">Civico</label>
+                          <input class="form-control" formControlName="civico" type="text" id="civico"
+                              autocomplete="false">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="mb-3 col-6">
+                          <label class="form-label">Cap</label>
+                          <input class="form-control" formControlName="cap" type="text" id="cap" autocomplete="false">
+                      </div>
+
+                      <div class="mb-3 col-6">
+                          <label class="form-label">Localita</label>
+                          <input class="form-control" formControlName="localita" type="text" id="localita"
+                              autocomplete="false">
+                      </div>
+                    </div>
+
+
+                    <div formGroupName="comune">
+
+                            <div class="row">
+                              <div class="mb-3 col-6">
+                                  <label class="form-label">Comune*</label>
+                                  <select class="form-control" formControlName="id" id="comune" *ngIf="comuni">
+                                      <option value=""></option>
+                                      <option *ngFor="let c of comuni"
+                                          [attr.selected]="cliente && c.id === cliente.indirizzoSedeOperativa.comune.id ? true : null"
+                                          value = "{{ c.id }}" >{{ c.nome }}</option>
+                                  </select>
+                              </div>
+
+
+                                  <div class="mb-3 col-6">
+                                      <label class="form-label">Provincia</label>
+                                      <select class="form-control" formControlName="provincia" id="provincia"
+                                          *ngIf="province">
+                                          <option value=""></option>
+                                          <option *ngFor="let p of province"
+                                              [attr.selected]="cliente && p.id === cliente.indirizzoSedeOperativa.comune.provincia.id ? true : null"
+                                              value="{{ p.id }}">{{ p.nome }}</option>
+                                      </select>
+                                  </div>
+
+                            </div>
+
+
+                    </div>
+
+                    </div>
+
+                <div style="margin-top:20px">
+                    <button type="submit" class="btn btn-lg btn-outline-light hvr-ripple-out" [disabled]="!form.valid">Salva</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
